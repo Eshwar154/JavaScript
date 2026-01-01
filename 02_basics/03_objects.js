@@ -7,7 +7,7 @@
 //symbol declaration
 const mySym = Symbol("key1")
 
-
+//Object literal
 const JsUser = {
     name: "hitesh",   //here name key is also a string in object
     "full name":"Hitesh Choudhary", // now we cannot access this value  as .full name by anychance.
