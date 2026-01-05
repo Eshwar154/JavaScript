@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure with chai</title>
+</head>
+<body style="background-color: #313131;">
+  <button id="orange">Orange</button>
+<button id="green">Green</button>
+  
+</body>
+<script>
+    // function init() {
+    //         let name = "Mozilla"; // name is a local variable created by init
+    //         function displayName() {
+    //             console.log(name); // use variable declared in the parent function
+    //         }
+    //         displayName();
+    //     }
+    //     init();
+
+
+
+    /// Lexical Scoping is  if there outer function with multiple inner function that all inner funtion can aceess the outer function vairable  and function but one inner function cannot acces another inner function variable .
+    //   function outer(){
+    //     let username = "hitesh"
+    //     //console.log("outer",secret)
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner",username);
+    //     }
+       
+    //     function innerTwo(){
+           
+    //         console.log("innerTwo",username);
+    //         console.log(secret);
+    //     }
+    //      inner()
+    //     innerTwo()
+    //   }
+    //   outer()
+
+    //   console.log("Too outer",username);
+
+    // function makeFunc() {
+    //         const name = "Mozilla";
+    //         function displayName() {
+    //             console.log(name);
+    //         }
+    //         return displayName;      /// this means not only displayname function scopr but aso its outer function reference is also returned here whole lexical scope of inner function is shared
+    //     }
+
+    //     const myFunc = makeFunc();
+    //     myFunc();
+
+
+
+
+
+
+
+
+</script>
+<script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = "orange"
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+    function clickHandler(color){
+         //document.body.style.backgroundColor = '${color}'
+    
+
+     return  function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+}
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+</html>
